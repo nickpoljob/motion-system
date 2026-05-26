@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ─── Motion — длительности и easing ───────────────────────── */
+  --motion-duration-fast: 240ms;
+  --motion-duration-base: 340ms;
+  --motion-duration-slow: 540ms;
+  --motion-ease-standard: cubic-bezier(0.55, 0, 0.45, 1);
+  --motion-ease-enter:    cubic-bezier(0.05, 0.7, 0.25, 1.0);
+  --motion-ease-exit:     cubic-bezier(0.64, 0, 0.78, 0);
+  --motion-ease-spring:   cubic-bezier(0.42, 0, 0.18, 1.06);
+
+  /* ─── Типографика — SITE (только Onest, сайт документации) ─ */
+  --site-font: 'Onest', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+  --site-text-12: 12px;
+  --site-text-16: 16px;
+  --site-text-20: 20px;
+  --site-text-24: 24px;
+  --site-text-32: 32px;
+  --site-line-tight:   1.25;
+  --site-line-default: 1.4;
+  --site-line-relaxed: 1.6;
+  --site-weight-regular:  400;
+  --site-weight-medium:   500;
+  --site-weight-semibold: 600;
+  --site-weight-bold:     700;
+  --site-tracking-display: -0.02em;
+
+  /* ─── Типографика — CODE (моно: код-блоки и инлайн-значения токенов) ─── */
+  --code-font: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace;
+  --code-text-12: 12px;
+  --code-text-14: 14px;
+  --code-line: 1.6;
+
+  /* ─── Типографика — PHONE (только внутри .phone-frame) ──── */
+  --font-app: 'Onest', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* ─── Цвета — поверхности ───────────────────────────────── */
+  --app-bg-page:    #F5F7FA;
+  --app-bg-card:    #FFFFFF;
+  --app-bg-dark:    #070707;
+  --app-white-16:   rgba(255, 255, 255, 0.16);
+  --app-white-30:   rgba(255, 255, 255, 0.30);
+  --app-action-bg:  rgba(255, 255, 255, 0.16);
+
+  /* ─── Цвета — текст ──────────────────────────────────────── */
+  --app-text-primary:   #070707;
+  --app-text-secondary: rgba(204, 214, 228, 0.60);
+  --app-text-on-dark:   #FFFFFF;
+  --app-text-black:     #000000;
+
+  /* ─── Цвета — бренд ──────────────────────────────────────── */
+  --app-primary:        #005BFF;
+  --app-primary-on-dark: #0096FF;
+  --app-accent-purple:  #5B51DE;
+  --app-accent-lime:    #9BF050;
+
+  /* ─── Цвета — статус ─────────────────────────────────────── */
+  --app-success:        #1DED62;
+  --app-success-bg:     rgba(29, 237, 98, 0.16);
+  --app-text-success:   #1DED62;
+  --app-text-link:      #005BFF;
+
+  /* ─── Цвета — оверлеи и обводка ─────────────────────────── */
+  --app-overlay-dark:   rgba(0, 26, 52, 0.60);
+  --app-border:         rgba(204, 214, 228, 0.60);
+
+  /* ─── Радиусы ────────────────────────────────────────────── */
+  --app-radius-card:   16px;
+  --app-radius-action: 14px;
+  --app-radius-sm:     12px;
+
+  /* ─── Отступы ────────────────────────────────────────────── */
+  --space-20:  2px;
+  --space-40:  4px;
+  --space-80:  8px;
+  --space-120: 12px;
+  --space-160: 16px;
+  --space-200: 20px;
+  --space-240: 24px;
+  --space-320: 32px;
+  --space-400: 40px;
+  --space-480: 48px;
+  --space-560: 56px;
+
+  /* алиасы (устаревшие, для совместимости) */
+  --app-space-x:    var(--space-160);
+  --app-space-card: var(--space-160);
+  --app-space-gap:  var(--space-80);
+
+  /* ─── Shell (тёмный UI документации) ────────────────────── */
+  --shell-bg:           #080808;
+  --shell-panel:        #141414;
+  --shell-border:       rgba(255, 255, 255, 0.08);
+  --shell-text:         #e8eaf0;
+  --shell-heading:      var(--app-text-on-dark);
+  --shell-muted:        var(--app-text-secondary);
+  --shell-accent:       var(--app-primary-on-dark);
+  --shell-active-bg:    rgba(0, 150, 255, 0.12);
+  --shell-active-border: rgba(0, 150, 255, 0.30);
+  --shell-scrollbar:    rgba(255, 255, 255, 0.12);
+  --shell-empty:        rgba(255, 255, 255, 0.20);
+  --shell-callout-bg:   rgba(0, 150, 255, 0.08);
+  --shell-note-bg:      rgba(255, 255, 255, 0.04);
+  --shell-hover:        rgba(255, 255, 255, 0.06);
+  --shell-hover-strong: rgba(255, 255, 255, 0.08);
+  --shell-highlight:    #e2b340;
+
+  /* ─── Code ───────────────────────────────────────────────── */
+  --code-bg:       var(--app-bg-dark);
+  --code-border:   rgba(255, 255, 255, 0.06);
+  --code-text:     #c8ccd4;
+  --code-hl-prop:  #7ecbff;
+  --code-hl-val:   #ffd666;
+  --code-hl-sel:   #c792ea;
+  --code-hl-cmt:   #555;
+}
+
+/* Fluid типографика на мобиле */
+@media (max-width: 640px) {
+  :root {
+    --site-text-32: clamp(22px, 6vw, 28px);
+    --site-text-24: clamp(18px, 5vw, 22px);
+    --site-text-20: clamp(16px, 4.5vw, 19px);
+  }
+}
