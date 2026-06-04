@@ -83,7 +83,8 @@
   --space-480: 48px;
   --space-560: 56px;
 
-  /* алиасы (устаревшие, для совместимости) */
+  /* DEPRECATED — оставлены для совместимости со старыми местами в index.html.
+     В новом коде использовать --space-* напрямую. */
   --app-space-x:    var(--space-160);
   --app-space-card: var(--space-160);
   --app-space-gap:  var(--space-80);

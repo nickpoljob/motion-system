@@ -4,19 +4,18 @@
 
 ## Источник правды
 
-| Файл | Статус |
+| Файл / папка | Статус |
 |---|---|
 | `index.html` | Главный сайт, playground и каталог анимаций |
-| `tokens.css` | App-токены: Onest, цвета, типографика, радиусы, отступы |
+| `tokens.css` | Все токены: motion, site, code, phone, app, shell, code-highlight |
 | `assets/status-bar-*.svg` | SVG-статус-бары для светлого и тёмного состояния превью |
-| `spec.md` | Текстовая спецификация, синхронизированная с сайтом |
-
-Удалены устаревшие preview-страницы, временные HTML, логи Playwright и PNG-скриншоты из корня проекта.
+| `assets/*.png` | Иллюстрации для curtain/banner-демо |
+| `icons/` | Каталог monochrome filled-иконок (`ic_m_*_filled.svg`), используется внутри phone-превью |
 
 ## Как запустить
 
 ```bash
-cd /Users/nikolajpolakov/Desktop/проекты/анимация
+cd /Users/nikolajpolakov/Desktop/проекты/motion
 python3 -m http.server 8770
 ```
 
@@ -43,11 +42,11 @@ http://localhost:8770/index.html
 
 ## Текущие токены
 
-Motion-токены (`index.html`):
+Motion-токены (`tokens.css`):
 
-Duration: `xs` 150ms · `s` 240ms · `m` 320ms · `l` 480ms · `xl` 720ms
+Duration: `--motion-duration-fast` 240ms · `--motion-duration-base` 340ms · `--motion-duration-slow` 540ms
 
-Easing: `standard` `cubic-bezier(0.55, 0, 0.45, 1)` · `enter` `cubic-bezier(0.12, 1, 0.24, 1)` · `exit` `cubic-bezier(0.64, 0, 0.78, 0)` · `spring` `cubic-bezier(0.42, 0, 0.18, 1.06)`
+Easing: `--motion-ease-standard` `cubic-bezier(0.55, 0, 0.45, 1)` · `--motion-ease-enter` `cubic-bezier(0.05, 0.7, 0.25, 1.0)` · `--motion-ease-exit` `cubic-bezier(0.64, 0, 0.78, 0)` · `--motion-ease-spring` `cubic-bezier(0.42, 0, 0.18, 1.06)`
 
 App-токены (`tokens.css`):
 
@@ -78,7 +77,15 @@ Site-веса: `--site-weight-regular / medium / semibold / bold`. Site line-hei
 
 Цвета — оверлеи: `rgba(0,26,52,0.60)` overlay-dark · `rgba(204,214,228,0.60)` border.
 
-Радиусы: 16/14/12px. Отступы: 16/8px.
+Радиусы: `--app-radius-card` 16px · `--app-radius-action` 14px · `--app-radius-sm` 12px.
+
+Отступы — единая шкала с шагом в исходных design-pt (`pt × 10`), значения в CSS-px равны pt: `--space-20` 2 · `--space-40` 4 · `--space-80` 8 · `--space-120` 12 · `--space-160` 16 · `--space-200` 20 · `--space-240` 24 · `--space-320` 32 · `--space-400` 40 · `--space-480` 48 · `--space-560` 56.
+
+Алиасы `--app-space-x` / `--app-space-card` / `--app-space-gap` — **deprecated**, оставлены только для совместимости со старыми местами в `index.html`. В новом коде использовать `--space-*` напрямую.
+
+Shell-токены (тёмная тема документации, `tokens.css`, префикс `--shell-*`): фон, панель, бордер, текст, акценты, состояния hover/active, scrollbar, callout/note-фон, подсветка. Используются только в shell-обёртке сайта документации, **не** внутри `.phone-frame`.
+
+Code-highlight токены (`--code-bg`, `--code-border`, `--code-text`, `--code-hl-*`): применяются только в блоках кода и инлайн-токен-значениях.
 
 Phone preview-токены (`index.html`, `.phone-frame`):
 
