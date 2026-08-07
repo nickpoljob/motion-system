@@ -31,6 +31,7 @@ http://localhost:8770/index.html
 |---|---|
 | `#principles-full` | Полная спецификация: принципы, токены, правила для разработчиков |
 | `#principles` | Playground для duration/easing: curve, position, expand и scale-примеры |
+| `#changelog` | История изменений motion-системы |
 | `#skeleton-loading` | Скелетон: состояние загрузки → раскрытие главного экрана |
 | `#button-press` | Анимация кнопки |
 | `#card-press` | Анимация карточки — превью на главном экране приложения, карточки интерактивны |
